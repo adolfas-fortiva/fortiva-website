@@ -512,13 +512,11 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   </div>
   <div class="page-body">
     <div class="page-body-inner">
-      <div class="contact-grid">
-        <div>
-          <div class="contact-actions">
-            <a href="https://calendly.com" class="contact-action">Book a 30-minute call <span>&#8594;</span></a>
-            <a href="https://www.linkedin.com/company/fortiva-consulting" class="contact-action">LinkedIn <span>&#8594;</span></a>
-          </div>
-        </div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/adolfas-fortiva" style="min-width:320px;height:700px;margin-bottom:3rem;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <div class="contact-actions" style="max-width:34rem;">
+        <a href="https://www.linkedin.com/company/fortiva-consulting" class="contact-action" target="_blank" rel="noopener noreferrer">LinkedIn <span>&#8594;</span></a>
+        <a href="mailto:adolfas@fortiva.solutions" class="contact-action">Send an email <span>&#8594;</span></a>
       </div>
       <button class="back-link" onclick="showPage('home')">&#8592; Back</button>
     </div>
