@@ -390,7 +390,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   <div class="page-header">
     <div class="page-header-inner">
       <div>
-        <div class="reveal"><span class="reveal-inner"><div class="page-number">01 — What we do</div></span></div>
+        
         <div class="reveal"><span class="reveal-inner delay-1"><h2 class="page-title">Supply chain and operations — <em>AI built in</em></h2></span></div>
       </div>
       <div class="reveal"><span class="reveal-inner delay-2"><p class="page-intro">Fortiva works with companies during periods of growth, transition, or increased complexity — bringing structure to what needs to be delivered and building the systems that sustain it.</p></span></div>
@@ -415,7 +415,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   <div class="page-header">
     <div class="page-header-inner">
       <div>
-        <div class="reveal"><span class="reveal-inner"><div class="page-number">02 — How we work</div></span></div>
+        
         <div class="reveal"><span class="reveal-inner delay-1"><h2 class="page-title">Embed. Build. <em>Exit.</em></h2></span></div>
       </div>
       <div class="reveal"><span class="reveal-inner delay-2"><p class="page-intro">Fortiva works as an embedded operator — not an external advisor. Every engagement has a defined scope, a clear outcome, and a structured exit.</p></span></div>
@@ -449,20 +449,20 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   <div class="page-header">
     <div class="page-header-inner">
       <div>
-        <div class="reveal"><span class="reveal-inner"><div class="page-number">03 — Work</div></span></div>
+        
         <div class="reveal"><span class="reveal-inner delay-1"><h2 class="page-title">Engagements across <em>logistics and operations</em></h2></span></div>
       </div>
-      <div class="reveal"><span class="reveal-inner delay-2"><p class="page-intro">Four engagements across supply chain, logistics, and commercial operations — each one with a defined outcome and a system that continued after Fortiva left.</p></span></div>
+      <div class="reveal"><span class="reveal-inner delay-2"><p class="page-intro">Engagements across supply chain, logistics, and commercial operations.</p></span></div>
     </div>
   </div>
   <div class="page-body">
     <div class="page-body-inner">
       <div class="cases-layout">
         <div class="cases-nav">
-          <a class="case-nav-item active" onclick="return showCase(0)" href="#"><span class="case-nav-num">01</span><span class="case-nav-title">Shared Operations Infrastructure</span><span class="case-indicator">&#8226;</span></a>
-          <a class="case-nav-item" onclick="return showCase(1)" href="#"><span class="case-nav-num">02</span><span class="case-nav-title">Delivery Performance Tracking</span><span class="case-indicator">&#8226;</span></a>
-          <a class="case-nav-item" onclick="return showCase(2)" href="#"><span class="case-nav-num">03</span><span class="case-nav-title">Field Capacity Recovery</span><span class="case-indicator">&#8226;</span></a>
-          <a class="case-nav-item" onclick="return showCase(3)" href="#"><span class="case-nav-num">04</span><span class="case-nav-title">Returns Architecture</span><span class="case-indicator">&#8226;</span></a>
+          <a class="case-nav-item active" onclick="return showCase(0)" href="#"><span class="case-nav-title">Shared Operations Infrastructure</span><span class="case-indicator">&#8226;</span></a>
+          <a class="case-nav-item" onclick="return showCase(1)" href="#"><span class="case-nav-title">Delivery Performance Tracking</span><span class="case-indicator">&#8226;</span></a>
+          <a class="case-nav-item" onclick="return showCase(2)" href="#"><span class="case-nav-title">Field Capacity Recovery</span><span class="case-indicator">&#8226;</span></a>
+          <a class="case-nav-item" onclick="return showCase(3)" href="#"><span class="case-nav-title">Returns Architecture</span><span class="case-indicator">&#8226;</span></a>
         </div>
         <div class="cases-content">
           <div class="case-panel active" id="case-0">
@@ -504,7 +504,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   <div class="page-header">
     <div class="page-header-inner">
       <div>
-        <div class="reveal"><span class="reveal-inner"><div class="page-number">04 — Contact</div></span></div>
+        
         <div class="reveal"><span class="reveal-inner delay-1"><h2 class="page-title">Worth a <em>conversation</em></h2></span></div>
       </div>
       <div class="reveal"><span class="reveal-inner delay-2"><p class="page-intro">If there is an operational problem worth solving — in supply chain, fulfilment, or commercial operations — Fortiva can help assess whether it is the right fit.</p></span></div>
@@ -512,9 +512,8 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
   </div>
   <div class="page-body">
     <div class="page-body-inner">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/adolfas-fortiva" style="min-width:320px;height:700px;margin-bottom:3rem;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <div class="contact-actions" style="max-width:34rem;">
+        <a href="https://calendly.com/adolfas-fortiva" class="contact-action" target="_blank" rel="noopener noreferrer">Book a meeting <span>&#8594;</span></a>
         <a href="https://www.linkedin.com/company/fortiva-consulting" class="contact-action" target="_blank" rel="noopener noreferrer">LinkedIn <span>&#8594;</span></a>
         <a href="mailto:adolfas@fortiva.solutions" class="contact-action">Send an email <span>&#8594;</span></a>
       </div>
@@ -526,7 +525,12 @@ footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); }
 <footer>
   <div class="footer-inner">
     <span class="footer-text">Fortiva Solutions</span>
-    <span class="footer-text">fortiva.consulting</span>
+    <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
+      <a href="#" onclick="return showPage('privacy')" class="footer-text" style="text-decoration:none;">Privacy</a>
+      <a href="#" onclick="return showPage('terms')" class="footer-text" style="text-decoration:none;">Terms</a>
+      <a href="#" onclick="return showPage('disclaimer')" class="footer-text" style="text-decoration:none;">Disclaimer</a>
+      <a href="#" onclick="return showPage('cookies')" class="footer-text" style="text-decoration:none;">Cookies</a>
+    </div>
   </div>
 </footer>
 
@@ -565,6 +569,129 @@ function showCase(index) {
 
 triggerAnimations('home');
 </script>
+
+
+<!-- PRIVACY POLICY -->
+<section id="page-privacy" class="page-section">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div><h2 class="page-title">Privacy Policy</h2></div>
+      <p class="page-intro">How Fortiva Solutions handles personal data in compliance with UK GDPR.</p>
+    </div>
+  </div>
+  <div class="page-body">
+    <div class="page-body-inner" style="max-width:48rem;">
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Who we are</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Fortiva Solutions is an operational consulting practice based in the United Kingdom. The data controller for any personal information collected through this website is Fortiva Solutions, contactable at adolfas@fortiva.solutions.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">What data we collect</h3>
+      <p class="section-body" style="margin-bottom:2rem;">This website does not operate its own contact form or collect data directly. If you book a meeting via Calendly, Calendly collects your name, email address, and any information you provide during booking under their own privacy policy. If you send an email, we receive your email address and the content of your message. We do not use analytics, advertising trackers, or third-party data collection beyond Calendly.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">How we use your data</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Contact information is used solely to respond to enquiries and manage potential or existing client relationships. We do not share personal data with third parties, sell it, or use it for marketing without explicit consent.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Legal basis</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Processing is based on legitimate interest in responding to business enquiries, and on the performance of a contract where an engagement is agreed.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Retention</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Enquiry correspondence is retained for up to 24 months. Client-related data is retained for seven years in line with standard UK business record-keeping requirements.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Your rights</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Under UK GDPR you have the right to access, correct, or request deletion of your personal data. To exercise any of these rights, contact adolfas@fortiva.solutions. You also have the right to lodge a complaint with the Information Commissioner's Office (ico.org.uk).</p>
+
+      <button class="back-link" onclick="showPage('home')">&#8592; Back</button>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="page-terms" class="page-section">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div><h2 class="page-title">Terms of Engagement</h2></div>
+      <p class="page-intro">The basis on which Fortiva Solutions works with clients.</p>
+    </div>
+  </div>
+  <div class="page-body">
+    <div class="page-body-inner" style="max-width:48rem;">
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Scope</h3>
+      <p class="section-body" style="margin-bottom:2rem;">These terms apply to all consulting engagements delivered by Fortiva Solutions. Specific deliverables, timelines, and fees are agreed in writing prior to any engagement commencing. Nothing on this website constitutes a contractual offer.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Deliverables and intellectual property</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Work product created specifically for a client during an engagement is owned by that client upon receipt of full payment. Fortiva Solutions retains the right to use frameworks, methodologies, and general approaches developed across engagements, provided no confidential client information is disclosed.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Confidentiality</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Fortiva Solutions treats all client information as confidential and does not disclose it to third parties without consent. This obligation continues after an engagement ends.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Liability</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Fortiva Solutions provides operational advice and implementation support based on the information available at the time. Liability for any indirect, consequential, or business losses is excluded to the extent permitted by law. Total liability in relation to any engagement is limited to the fees paid for that engagement.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Governing law</h3>
+      <p class="section-body" style="margin-bottom:2rem;">These terms are governed by the law of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+      <button class="back-link" onclick="showPage('home')">&#8592; Back</button>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section id="page-disclaimer" class="page-section">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div><h2 class="page-title">Disclaimer</h2></div>
+      <p class="page-intro">The basis on which content on this website should be read.</p>
+    </div>
+  </div>
+  <div class="page-body">
+    <div class="page-body-inner" style="max-width:48rem;">
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Informational content</h3>
+      <p class="section-body" style="margin-bottom:2rem;">The content on this website is provided for informational purposes only. It describes the nature of services offered by Fortiva Solutions and examples of past work. It does not constitute professional advice and should not be relied upon as such without engaging directly with Fortiva Solutions in the context of a specific situation.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Case studies</h3>
+      <p class="section-body" style="margin-bottom:2rem;">Engagements described on this website are illustrative of the type of work undertaken. Outcomes described reflect specific circumstances and cannot be taken as representative of what any future engagement will deliver. Results vary based on the nature of the problem, the organisation involved, and conditions at the time.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">External links</h3>
+      <p class="section-body" style="margin-bottom:2rem;">This website links to third-party services including Calendly and LinkedIn. Fortiva Solutions is not responsible for the content, privacy practices, or availability of those services.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">No warranty</h3>
+      <p class="section-body" style="margin-bottom:2rem;">This website is provided on an as-is basis. Fortiva Solutions makes no warranty as to the accuracy, completeness, or fitness for purpose of the content contained here.</p>
+
+      <button class="back-link" onclick="showPage('home')">&#8592; Back</button>
+    </div>
+  </div>
+</section>
+
+<!-- COOKIES -->
+<section id="page-cookies" class="page-section">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div><h2 class="page-title">Cookie Policy</h2></div>
+      <p class="page-intro">How cookies are used on this website.</p>
+    </div>
+  </div>
+  <div class="page-body">
+    <div class="page-body-inner" style="max-width:48rem;">
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">What this site uses</h3>
+      <p class="section-body" style="margin-bottom:2rem;">This website does not use advertising cookies, analytics cookies, or tracking pixels. No first-party cookies are set by Fortiva Solutions.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Third-party cookies</h3>
+      <p class="section-body" style="margin-bottom:2rem;">If you follow the link to book a meeting via Calendly, Calendly may set cookies on their platform in accordance with their own cookie policy. These cookies are set by Calendly, not by this website, and are subject to Calendly's terms.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Managing cookies</h3>
+      <p class="section-body" style="margin-bottom:2rem;">You can control and delete cookies through your browser settings. Disabling cookies will not affect your ability to use this website. If you use Calendly to book a meeting, refer to Calendly's cookie policy for information on how to manage their cookies.</p>
+
+      <button class="back-link" onclick="showPage('home')">&#8592; Back</button>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
