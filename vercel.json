@@ -2,9 +2,11 @@
   "version": 2,
   "name": "fortiva-solutions",
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "quote-slickgorilla-hc1f9.html", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/quote/slickgorilla-hc1f9", "dest": "/quote-slickgorilla-hc1f9.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

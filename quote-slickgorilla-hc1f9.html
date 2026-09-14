@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Order Tracking - Fortiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text: #1e2124;
+  --text-medium: #636363;
+  --text-light: #767676;
+  --bg: #ffffff;
+  --border: #e0e0e0;
+  --tint: #f7f7f6;
+  --max-width: 80rem;
+  --gutter: 1.667rem;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
+
+header.masthead { border-bottom: 1px solid var(--border); padding: 3.5rem 0 2.75rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 3rem; }
+.brand img { width: 26px; height: 26px; display: block; }
+.brand span { font-size: 1.05rem; font-weight: 400; letter-spacing: -0.01em; }
+
+h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; max-width: 20ch; }
+.standfirst { margin-top: 1.5rem; max-width: 58ch; color: var(--text-medium); font-size: 1.0625rem; }
+.meta { margin-top: 2.25rem; font-size: 0.8125rem; color: var(--text-light); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; vertical-align: top; padding: 0.95rem 1rem; }
+th:first-child, td:first-child { padding-left: 0; }
+
+thead th { border-bottom: 1px solid var(--text); font-size: 0.8125rem; font-weight: 400; color: var(--text-light); padding-bottom: 0.7rem; }
+thead th.tier { width: 18%; text-align: center; font-size: 1.125rem; font-weight: 400; color: var(--text); }
+
+tbody td { border-bottom: 1px solid var(--border); font-size: 0.9375rem; }
+tbody td.tier { text-align: center; color: var(--text-light); }
+tbody td.tier.on { color: var(--text); font-weight: 400; }
+tbody td.carry { text-align: center; color: var(--text-light); font-size: 0.875rem; font-style: italic; vertical-align: middle; }
+td.feature .detail { display: block; color: var(--text-light); font-size: 0.8125rem; margin-top: 0.2rem; max-width: 46ch; }
+
+col.pick { background: var(--tint); }
+
+tr.band td { border-bottom: 1px solid var(--text); font-size: 0.8125rem; color: var(--text-light); padding-top: 3rem; padding-bottom: 0.7rem; }
+tr.total td { border-bottom: none; padding-top: 1.4rem; }
+tr.total td.tier { font-size: 1.75rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
+tr.total td .after { display: block; font-size: 0.8125rem; color: var(--text-light); margin-top: 0.35rem; letter-spacing: 0; }
+
+h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5rem 0 1.25rem; }
+.quarterly table { max-width: 42rem; }
+.quarterly td, .quarterly th { font-size: 0.9375rem; padding: 0.7rem 1rem; }
+.quarterly td:not(:first-child), .quarterly th:not(:first-child) { text-align: right; }
+
+.notes { margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 3rem; max-width: 56rem; }
+.notes p { font-size: 0.875rem; color: var(--text-medium); }
+.notes strong { display: block; font-weight: 400; color: var(--text); }
+
+.foot { margin: 4.5rem 0 5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+.foot a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; font-size: 0.9375rem; }
+.foot a:hover { border-color: var(--text); }
+.foot span { font-size: 0.8125rem; color: var(--text-light); }
+
+@media (max-width: 760px) {
+  table, thead, tbody, tr, td, th { display: block; }
+  thead { display: none; }
+  tbody td { border: none; padding: 0.2rem 0; }
+  tbody tr { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+  tbody td.tier { text-align: left; }
+  tbody td.tier::before { content: attr(data-tier) " - "; color: var(--text-light); }
+  tbody td.carry { display: none; }
+  .notes { grid-template-columns: 1fr; }
+}
+@media print {
+  .foot { display: none; }
+  col.pick { background: #f4f4f3 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAwFBMVEW/0uCXqbtyhJlUfaZTaIA6YpM+UmsvT3cwRF8lQGUlOVMcMU4ZKT8SJUETITMQITgQHzUSIDESHzESHzASHy8RHy8RHi8QHi4RHS4QHS0QHC0NHC8QHSwPHCsPGyoPGykOGyoPGigOGikOGigOGScNGSkNGScNGCcNGCYNGCUNFyULGSwMGCcMFyYMFyUMFiQLFSMKFiULFiILFSILFCEKEyAKEx8KEx4IFSYKEh8KEh4KEh0IEiEIER4DDBs+BNpXAAACrElEQVR42j2R63KqQBCEF1hYWEBRE3MQUYS4YMJFCEgIWXj/tzozWJUu8U9/1T07Q66XOIlPoDAMj//2+/3LbrfZrOD3FLkmSXwGPwLkeHwDYrfZLsQTIbdLcrmcT1GEIUffB+R1v9tt/xJuV8g4n87nKI4gwvd9DPkDNuQjTaEkikERlhwXAEqeNVvyeUuzVMRxkkTROQy3b4c3qNltMWSLQFXdsjR9v0BPfHopDDt8AeB1BzU7xBC4gt4TUCFn6syNj6PiiwHbk8/q4/pUcnWoSlRqrPxF+OS9DwmfH7f0BjrPBtpUDQY/DJ+QfyDVZ1VVH6gbVxWiqKpKeRSijsCF5A4+QteZE7AN06CKMoTL6sNTeCJfdxQydwoyDe44ThHhZuEvjEj7VS/I/TqbhBAVOqiMBViwPPhI27ZfoPZelrmimFzRNN6sXe8QLtsVpGsX1XVTiFxVuAq+51qWHUSxQODRdU/gDnMS4qh0KwPbcnXexKkQCwDIvWwGOUiFOBq1LMaYptsl2CIjPQLNMKxtZtmQQA2LKbrFXLSTNCPjT/+oB1vXmWblCgLcYnYgCyFSuHNBpp+fh7Q13eJBLhXFoaY/yboUBdw4zbISgL6dmWK7jK9mRVkZ5rEWZVVmSGQlAGPfThbMZHJYgsIN8yClbERRZBlcEIHvvg4sXSNsyFWVG4ZpMe7mTSmyW7YAfd81ua3BGB6lK5OvbXinZXsY8qxAYlhbDB5CoWkdcMps13a9qFyAcewfj7qR8uBQDSjb1QlheR54XlBUZPoeYYru8WhbORuGY3Cm6zCzu/YCEUUChxyxBTUZxuoy147JIAaJCG7xO474kO/vvh9/YRVT28lJeosfBDkC2AEfzjJOUNZ1dS2nVoAvlgR0+wUYfzqYdzlv3XZthff6D/7Xeuo9Z/gDAAAAAElFTkSuQmCC" alt="">
+      <span>Fortiva</span>
+    </div>
+    <h1>Order tracking, built around your operation</h1>
+    <p class="standfirst">One place to see every order and parcel, which ones are stuck, and who needs to do something about them. Connects to Shopify and 17Track, and is configured to your warehouses, carriers and delivery targets.</p>
+    <p class="meta">Prepared for Slick Gorilla. All prices in GBP, plus VAT.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <table>
+    <colgroup><col><col><col class="pick"><col></colgroup>
+    <thead>
+      <tr>
+        <th scope="col">Included</th>
+        <th scope="col" class="tier">Base</th>
+        <th scope="col" class="tier">Standard</th>
+        <th scope="col" class="tier">Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="band"><td colspan="4">The module</td></tr>
+
+      <tr>
+        <td class="feature">Every order and parcel in one view<span class="detail">Searchable by order or tracking number, with the full carrier event history</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+        <td class="carry" rowspan="8">Everything in Base</td>
+        <td class="carry" rowspan="8">Everything in Standard</td>
+      </tr>
+      <tr>
+        <td class="feature">Aged and stuck parcels, split by cause<span class="detail">No tracking number, not yet scanned, or moving but invisible. Judged per parcel, not per order.</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Exception parcels<span class="detail">Failed delivery, returning, held for pickup, taken from the carrier's own reason code</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Warehouse and carrier performance<span class="detail">Days from order to dispatch and dispatch to delivery, by warehouse and carrier, against targets you set</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Slack alerts<span class="detail">Scheduled, configurable, and repeated while a parcel stays broken. Each one links straight to the parcel.</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">CSV export on every view</td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Set-up and configuration<span class="detail">Shopify and 17Track integrations, plus your warehouses, carriers, delivery targets and alert rules</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Training and support<span class="detail">One hour on handover, then email support for any fault in the module</span></td>
+        <td class="tier on" data-tier="Base">Included</td>
+      </tr>
+
+      <tr class="band"><td colspan="4">My time</td></tr>
+
+      <tr>
+        <td class="feature">Advisory hours across the year<span class="detail">Used on anything operational, not only this module</span></td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier on" data-tier="Standard">6 hours</td>
+        <td class="tier on" data-tier="Premium">12 hours</td>
+      </tr>
+      <tr>
+        <td class="feature">One more tab in the order tracking module<span class="detail">Built for a tracking problem you name. Scoped and agreed together first, up to one day of build. Anything larger is quoted separately.</span></td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier" data-tier="Standard">Not included</td>
+        <td class="tier on" data-tier="Premium">Included</td>
+      </tr>
+
+      <tr class="band"><td colspan="4">Price</td></tr>
+
+      <tr>
+        <td class="feature">Set-up, one-off</td>
+        <td class="tier" data-tier="Base">&pound;1,000</td>
+        <td class="tier" data-tier="Standard">&pound;1,000</td>
+        <td class="tier" data-tier="Premium">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Annual licence</td>
+        <td class="tier" data-tier="Base">&pound;2,300</td>
+        <td class="tier" data-tier="Standard">&pound;2,300</td>
+        <td class="tier" data-tier="Premium">&pound;2,300</td>
+      </tr>
+      <tr>
+        <td class="feature">Advisory hours</td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier" data-tier="Standard">&pound;1,200</td>
+        <td class="tier" data-tier="Premium">&pound;1,920</td>
+      </tr>
+      <tr class="total">
+        <td class="feature">Year one</td>
+        <td class="tier" data-tier="Base">&pound;3,300<span class="after">&pound;2,300 a year after</span></td>
+        <td class="tier" data-tier="Standard">&pound;4,500<span class="after">&pound;3,500 a year after</span></td>
+        <td class="tier" data-tier="Premium">&pound;6,000<span class="after">&pound;4,200 a year after</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="quarterly">
+    <h2>If you would rather pay quarterly</h2>
+    <table>
+      <thead>
+        <tr><th scope="col">Paid quarterly</th><th scope="col">Base</th><th scope="col">Standard</th><th scope="col">Premium</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Year one</td><td>&pound;3,800</td><td>&pound;5,200</td><td>&pound;7,000</td></tr>
+        <tr><td>Each year after</td><td>&pound;2,700</td><td>&pound;4,100</td><td>&pound;4,900</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notes">
+    <p><strong>17Track quota</strong>You buy the tracking quota directly from 17Track and they bill you for it. It is not included above and I take no margin on it.</p>
+    <p><strong>Unleashed</strong>Wholesale and stock transfer orders can be brought in, but it needs scoping first and is quoted separately.</p>
+    <p><strong>Cancelling</strong>The licence can be stopped after three months. Set-up is not refundable.</p>
+    <p><strong>Ownership</strong>The build runs on your own Shopify and 17Track accounts, and the data stays in a database in your name.</p>
+  </div>
+
+  <div class="foot">
+    <a href="mailto:adolfas@fortiva.solutions">adolfas@fortiva.solutions</a>
+    <a href="https://calendly.com/adolfas-fortiva" target="_blank" rel="noopener noreferrer">Book a call</a>
+    <span>Fortiva Consulting Ltd</span>
+  </div>
+
+</main>
+</body>
+</html>
