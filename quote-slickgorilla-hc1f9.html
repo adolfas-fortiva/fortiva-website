@@ -34,10 +34,7 @@ body {
 
 .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter); }
 
-header.masthead { border-bottom: 1px solid var(--border); padding: 3.5rem 0 2.75rem; }
-.brand { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 3rem; }
-.brand img { width: 26px; height: 26px; display: block; }
-.brand span { font-size: 1.05rem; font-weight: 400; letter-spacing: -0.01em; }
+header.masthead { border-bottom: 1px solid var(--border); padding: 4.5rem 0 2.75rem; }
 
 h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; max-width: 20ch; }
 .standfirst { margin-top: 1.5rem; max-width: 58ch; color: var(--text-medium); font-size: 1.0625rem; }
@@ -68,14 +65,10 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 .quarterly td, .quarterly th { font-size: 0.9375rem; padding: 0.7rem 1rem; }
 .quarterly td:not(:first-child), .quarterly th:not(:first-child) { text-align: right; }
 
-.notes { margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 3rem; max-width: 56rem; }
+.notes { margin: 4.5rem 0 6rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 3rem; max-width: 56rem; }
 .notes p { font-size: 0.875rem; color: var(--text-medium); }
 .notes strong { display: block; font-weight: 400; color: var(--text); }
 
-.foot { margin: 4.5rem 0 5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
-.foot a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; font-size: 0.9375rem; }
-.foot a:hover { border-color: var(--text); }
-.foot span { font-size: 0.8125rem; color: var(--text-light); }
 
 @media (max-width: 760px) {
   table, thead, tbody, tr, td, th { display: block; }
@@ -88,7 +81,6 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
   .notes { grid-template-columns: 1fr; }
 }
 @media print {
-  .foot { display: none; }
   col.pick { background: #f4f4f3 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 </style>
@@ -97,11 +89,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 
 <header class="masthead">
   <div class="wrap">
-    <div class="brand">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAwFBMVEW/0uCXqbtyhJlUfaZTaIA6YpM+UmsvT3cwRF8lQGUlOVMcMU4ZKT8SJUETITMQITgQHzUSIDESHzESHzASHy8RHy8RHi8QHi4RHS4QHS0QHC0NHC8QHSwPHCsPGyoPGykOGyoPGigOGikOGigOGScNGSkNGScNGCcNGCYNGCUNFyULGSwMGCcMFyYMFyUMFiQLFSMKFiULFiILFSILFCEKEyAKEx8KEx4IFSYKEh8KEh4KEh0IEiEIER4DDBs+BNpXAAACrElEQVR42j2R63KqQBCEF1hYWEBRE3MQUYS4YMJFCEgIWXj/tzozWJUu8U9/1T07Q66XOIlPoDAMj//2+/3LbrfZrOD3FLkmSXwGPwLkeHwDYrfZLsQTIbdLcrmcT1GEIUffB+R1v9tt/xJuV8g4n87nKI4gwvd9DPkDNuQjTaEkikERlhwXAEqeNVvyeUuzVMRxkkTROQy3b4c3qNltMWSLQFXdsjR9v0BPfHopDDt8AeB1BzU7xBC4gt4TUCFn6syNj6PiiwHbk8/q4/pUcnWoSlRqrPxF+OS9DwmfH7f0BjrPBtpUDQY/DJ+QfyDVZ1VVH6gbVxWiqKpKeRSijsCF5A4+QteZE7AN06CKMoTL6sNTeCJfdxQydwoyDe44ThHhZuEvjEj7VS/I/TqbhBAVOqiMBViwPPhI27ZfoPZelrmimFzRNN6sXe8QLtsVpGsX1XVTiFxVuAq+51qWHUSxQODRdU/gDnMS4qh0KwPbcnXexKkQCwDIvWwGOUiFOBq1LMaYptsl2CIjPQLNMKxtZtmQQA2LKbrFXLSTNCPjT/+oB1vXmWblCgLcYnYgCyFSuHNBpp+fh7Q13eJBLhXFoaY/yboUBdw4zbISgL6dmWK7jK9mRVkZ5rEWZVVmSGQlAGPfThbMZHJYgsIN8yClbERRZBlcEIHvvg4sXSNsyFWVG4ZpMe7mTSmyW7YAfd81ua3BGB6lK5OvbXinZXsY8qxAYlhbDB5CoWkdcMps13a9qFyAcewfj7qR8uBQDSjb1QlheR54XlBUZPoeYYru8WhbORuGY3Cm6zCzu/YCEUUChxyxBTUZxuoy147JIAaJCG7xO474kO/vvh9/YRVT28lJeosfBDkC2AEfzjJOUNZ1dS2nVoAvlgR0+wUYfzqYdzlv3XZthff6D/7Xeuo9Z/gDAAAAAElFTkSuQmCC" alt="">
-      <span>Fortiva</span>
-    </div>
-    <h1>Order tracking, built around your operation</h1>
+    <h1>Order tracking module</h1>
     <p class="standfirst">One place to see every order and parcel, which ones are stuck, and who needs to do something about them. Connects to Shopify and 17Track, and is configured to your warehouses, carriers and delivery targets.</p>
     <p class="meta">Prepared for Slick Gorilla. All prices in GBP, plus VAT.</p>
   </div>
@@ -215,16 +203,9 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
   </div>
 
   <div class="notes">
-    <p><strong>17Track quota</strong>You buy the tracking quota directly from 17Track and they bill you for it. It is not included above and I take no margin on it.</p>
+    <p><strong>17Track quota</strong>You buy the tracking quota directly from 17Track and they bill you for it.</p>
     <p><strong>Unleashed</strong>Wholesale and stock transfer orders can be brought in, but it needs scoping first and is quoted separately.</p>
     <p><strong>Cancelling</strong>The licence can be stopped after three months. Set-up is not refundable.</p>
-    <p><strong>Ownership</strong>The build runs on your own Shopify and 17Track accounts, and the data stays in a database in your name.</p>
-  </div>
-
-  <div class="foot">
-    <a href="mailto:adolfas@fortiva.solutions">adolfas@fortiva.solutions</a>
-    <a href="https://calendly.com/adolfas-fortiva" target="_blank" rel="noopener noreferrer">Book a call</a>
-    <span>Fortiva Consulting Ltd</span>
   </div>
 
 </main>
