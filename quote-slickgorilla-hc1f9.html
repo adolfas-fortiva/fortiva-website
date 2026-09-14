@@ -54,16 +54,17 @@ tbody td.carry { text-align: center; color: var(--text-light); font-size: 0.875r
 td.feature .detail { display: block; color: var(--text-light); font-size: 0.8125rem; margin-top: 0.2rem; max-width: 46ch; }
 
 col.pick { background: var(--tint); }
+.pickmark { display: block; font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-light); margin-top: 0.3rem; }
 
 tr.band td { border-bottom: 1px solid var(--text); font-size: 0.8125rem; color: var(--text-light); padding-top: 3rem; padding-bottom: 0.7rem; }
 tr.total td { border-bottom: none; padding-top: 1.4rem; }
 tr.total td.tier { font-size: 1.75rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
 tr.total td .after { display: block; font-size: 0.8125rem; color: var(--text-light); margin-top: 0.35rem; letter-spacing: 0; }
 
+.intro { margin: 3rem 0 0; max-width: 62ch; }
+.intro p { margin-bottom: 1rem; color: var(--text-medium); font-size: 1rem; }
+.tiers-head { margin-top: 2.75rem !important; }
 h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5rem 0 1.25rem; }
-.quarterly table { max-width: 42rem; }
-.quarterly td, .quarterly th { font-size: 0.9375rem; padding: 0.7rem 1rem; }
-.quarterly td:not(:first-child), .quarterly th:not(:first-child) { text-align: right; }
 
 .vat { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-light); }
 .notes { margin: 4.5rem 0 6rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 3rem; max-width: 56rem; }
@@ -97,13 +98,19 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 
 <main class="wrap">
 
+  <section class="intro">
+    <p>Right now an order going wrong is found out when the customer says so. Nothing tells you that a parcel was marked fulfilled four days ago and has never been scanned, that a warehouse is taking two days longer than it did last month, or that a carrier has quietly failed a delivery and is sending it back.</p>
+    <p>This module watches every order from the moment it is placed to the moment it lands, flags the ones that have stopped moving, and pushes them to whoever needs to chase them. It runs on the two systems you already have, Shopify and 17Track.</p>
+    <h2 class="tiers-head">Three versions</h2>
+  </section>
+
   <table>
     <colgroup><col><col><col class="pick"><col></colgroup>
     <thead>
       <tr>
         <th scope="col">Included</th>
         <th scope="col" class="tier">Base</th>
-        <th scope="col" class="tier">Standard</th>
+        <th scope="col" class="tier">Standard<span class="pickmark">Most take this</span></th>
         <th scope="col" class="tier">Premium</th>
       </tr>
     </thead>
@@ -166,7 +173,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="feature">Set-up, one-off</td>
         <td class="tier" data-tier="Base">&pound;1,000</td>
         <td class="tier" data-tier="Standard">&pound;1,000</td>
-        <td class="tier" data-tier="Premium">Included</td>
+        <td class="tier" data-tier="Premium">&pound;1,000</td>
       </tr>
       <tr>
         <td class="feature">Annual licence</td>
@@ -178,7 +185,13 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="feature">Advisory hours</td>
         <td class="tier" data-tier="Base">Not included</td>
         <td class="tier" data-tier="Standard">&pound;1,200</td>
-        <td class="tier" data-tier="Premium">&pound;1,920</td>
+        <td class="tier" data-tier="Premium">&pound;1,900</td>
+      </tr>
+      <tr>
+        <td class="feature">One more tab, built to scope</td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier" data-tier="Standard">Not included</td>
+        <td class="tier" data-tier="Premium">&pound;800</td>
       </tr>
       <tr class="total">
         <td class="feature">Year one</td>
@@ -188,19 +201,6 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
       </tr>
     </tbody>
   </table>
-
-  <div class="quarterly">
-    <h2>If you would rather pay quarterly</h2>
-    <table>
-      <thead>
-        <tr><th scope="col">Paid quarterly</th><th scope="col">Base</th><th scope="col">Standard</th><th scope="col">Premium</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Year one</td><td>&pound;3,800</td><td>&pound;5,200</td><td>&pound;7,000</td></tr>
-        <tr><td>Each year after</td><td>&pound;2,700</td><td>&pound;4,100</td><td>&pound;4,900</td></tr>
-      </tbody>
-    </table>
-  </div>
 
   <p class="vat">* All prices in GBP, plus VAT.</p>
 
