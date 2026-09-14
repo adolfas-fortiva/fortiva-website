@@ -38,7 +38,7 @@ header.masthead { border-bottom: 1px solid var(--border); padding: 4.5rem 0 2.75
 
 h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; max-width: 20ch; }
 .standfirst { margin-top: 1.5rem; max-width: 58ch; color: var(--text-medium); font-size: 1.0625rem; }
-.meta { margin-top: 2.25rem; font-size: 0.8125rem; color: var(--text-light); }
+.meta { margin-top: 1.25rem; font-size: 0.8125rem; color: var(--text-light); }
 
 table { width: 100%; border-collapse: collapse; }
 th, td { text-align: left; vertical-align: top; padding: 0.95rem 1rem; }
@@ -65,6 +65,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 .quarterly td, .quarterly th { font-size: 0.9375rem; padding: 0.7rem 1rem; }
 .quarterly td:not(:first-child), .quarterly th:not(:first-child) { text-align: right; }
 
+.vat { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-light); }
 .notes { margin: 4.5rem 0 6rem; padding-top: 2rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 3rem; max-width: 56rem; }
 .notes p { font-size: 0.875rem; color: var(--text-medium); }
 .notes strong { display: block; font-weight: 400; color: var(--text); }
@@ -90,8 +91,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 <header class="masthead">
   <div class="wrap">
     <h1>Order tracking module</h1>
-    <p class="standfirst">One place to see every order and parcel, which ones are stuck, and who needs to do something about them. Connects to Shopify and 17Track, and is configured to your warehouses, carriers and delivery targets.</p>
-    <p class="meta">Prepared for Slick Gorilla. All prices in GBP, plus VAT.</p>
+    <p class="meta">Prepared for Slick Gorilla</p>
   </div>
 </header>
 
@@ -182,9 +182,9 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
       </tr>
       <tr class="total">
         <td class="feature">Year one</td>
-        <td class="tier" data-tier="Base">&pound;3,300<span class="after">&pound;2,300 a year after</span></td>
-        <td class="tier" data-tier="Standard">&pound;4,500<span class="after">&pound;3,500 a year after</span></td>
-        <td class="tier" data-tier="Premium">&pound;6,000<span class="after">&pound;4,200 a year after</span></td>
+        <td class="tier" data-tier="Base">&pound;3,300*<span class="after">&pound;2,300 a year after</span></td>
+        <td class="tier" data-tier="Standard">&pound;4,500*<span class="after">&pound;3,500 a year after</span></td>
+        <td class="tier" data-tier="Premium">&pound;6,000*<span class="after">&pound;4,200 a year after</span></td>
       </tr>
     </tbody>
   </table>
@@ -201,6 +201,8 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
       </tbody>
     </table>
   </div>
+
+  <p class="vat">* All prices in GBP, plus VAT.</p>
 
   <div class="notes">
     <p><strong>17Track quota</strong>You buy the tracking quota directly from 17Track and they bill you for it.</p>
