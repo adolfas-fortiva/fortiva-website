@@ -61,9 +61,6 @@ tr.total td { border-bottom: none; padding-top: 1.4rem; }
 tr.total td.tier { font-size: 1.75rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
 tr.total td .after { display: block; font-size: 0.8125rem; color: var(--text-light); margin-top: 0.35rem; letter-spacing: 0; }
 
-.intro { margin: 3rem 0 0; max-width: 62ch; }
-.intro p { margin-bottom: 1rem; color: var(--text-medium); font-size: 1rem; }
-.tiers-head { margin-top: 2.75rem !important; }
 h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5rem 0 1.25rem; }
 
 .vat { margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-light); }
@@ -98,12 +95,6 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
 
 <main class="wrap">
 
-  <section class="intro">
-    <p>Right now an order going wrong is found out when the customer says so. Nothing tells you that a parcel was marked fulfilled four days ago and has never been scanned, that a warehouse is taking two days longer than it did last month, or that a carrier has quietly failed a delivery and is sending it back.</p>
-    <p>This module watches every order from the moment it is placed to the moment it lands, flags the ones that have stopped moving, and pushes them to whoever needs to chase them. It runs on the two systems you already have, Shopify and 17Track.</p>
-    <h2 class="tiers-head">Three versions</h2>
-  </section>
-
   <table>
     <colgroup><col><col><col class="pick"><col></colgroup>
     <thead>
@@ -120,7 +111,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
       <tr>
         <td class="feature">Every order and parcel in one view<span class="detail">Searchable by order or tracking number, with the full carrier event history</span></td>
         <td class="tier on" data-tier="Base">Included</td>
-        <td class="carry" rowspan="8">Everything in Base</td>
+        <td class="carry" rowspan="6">Everything in Base</td>
         <td class="carry" rowspan="8">Everything in Standard</td>
       </tr>
       <tr>
@@ -128,15 +119,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="tier on" data-tier="Base">Included</td>
       </tr>
       <tr>
-        <td class="feature">Exception parcels<span class="detail">Failed delivery, returning, held for pickup, taken from the carrier's own reason code</span></td>
-        <td class="tier on" data-tier="Base">Included</td>
-      </tr>
-      <tr>
         <td class="feature">Warehouse and carrier performance<span class="detail">Days from order to dispatch and dispatch to delivery, by warehouse and carrier, against targets you set</span></td>
-        <td class="tier on" data-tier="Base">Included</td>
-      </tr>
-      <tr>
-        <td class="feature">Slack alerts<span class="detail">Scheduled, configurable, and repeated while a parcel stays broken. Each one links straight to the parcel.</span></td>
         <td class="tier on" data-tier="Base">Included</td>
       </tr>
       <tr>
@@ -151,6 +134,17 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="feature">Training and support<span class="detail">One hour on handover, then email support for any fault in the module</span></td>
         <td class="tier on" data-tier="Base">Included</td>
       </tr>
+      <tr>
+        <td class="feature">Slack alerts<span class="detail">Scheduled, configurable, and repeated while a parcel stays broken. Each one links straight to the parcel.</span></td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier on" data-tier="Standard">Included</td>
+      </tr>
+      <tr>
+        <td class="feature">Exception parcels<span class="detail">Failed delivery, returning, held for pickup, taken from the carrier's own reason code</span></td>
+        <td class="tier" data-tier="Base">Not included</td>
+        <td class="tier" data-tier="Standard">Not included</td>
+        <td class="tier on" data-tier="Premium">Included</td>
+      </tr>
 
       <tr class="band"><td colspan="4">My time</td></tr>
 
@@ -159,12 +153,6 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="tier" data-tier="Base">Not included</td>
         <td class="tier on" data-tier="Standard">6 hours</td>
         <td class="tier on" data-tier="Premium">12 hours</td>
-      </tr>
-      <tr>
-        <td class="feature">One more tab in the order tracking module<span class="detail">Built for a tracking problem you name. Scoped and agreed together first, up to one day of build. Anything larger is quoted separately.</span></td>
-        <td class="tier" data-tier="Base">Not included</td>
-        <td class="tier" data-tier="Standard">Not included</td>
-        <td class="tier on" data-tier="Premium">Included</td>
       </tr>
 
       <tr class="band"><td colspan="4">Price</td></tr>
@@ -188,7 +176,7 @@ h2 { font-size: 1.375rem; font-weight: 300; letter-spacing: -0.01em; margin: 4.5
         <td class="tier" data-tier="Premium">&pound;1,900</td>
       </tr>
       <tr>
-        <td class="feature">One more tab, built to scope</td>
+        <td class="feature">One more tab in the module<span class="detail">Built for a tracking problem you name. Scoped and agreed together first, up to one day of build. Anything larger is quoted separately.</span></td>
         <td class="tier" data-tier="Base">Not included</td>
         <td class="tier" data-tier="Standard">Not included</td>
         <td class="tier" data-tier="Premium">&pound;800</td>
