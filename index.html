@@ -688,9 +688,13 @@ function pageForPath(path) {
   return PAGES.indexOf(slug) !== -1 ? slug : 'home';
 }
 
+var currentPage = 'home';
+var previousPage = null;
+
 function renderPage(id) {
   var target = document.getElementById('page-' + id);
   if (!target) return false;
+  if (id !== currentPage) { previousPage = currentPage; currentPage = id; }
   document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
   target.classList.add('active');
   triggerAnimations(id);
@@ -712,6 +716,39 @@ function showCase(index) {
   document.querySelectorAll('.case-panel').forEach(function(el, i) { el.classList.toggle('active', i === index); });
   return false;
 }
+
+/* Custom events: what visitors do, not just which pages they open. */
+function trackEvent(name, data) {
+  if (typeof window.va === 'function') {
+    window.va('event', data ? { name: name, data: data } : { name: name });
+  }
+}
+
+(function () {
+  var CTAS = [
+    { match: 'calendly.com', name: 'Book a meeting' },
+    { match: 'mailto:',      name: 'Send an email' },
+    { match: 'linkedin.com', name: 'LinkedIn' }
+  ];
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+
+    var href = a.getAttribute('href') || '';
+    for (var i = 0; i < CTAS.length; i++) {
+      if (href.indexOf(CTAS[i].match) !== -1) {
+        trackEvent(CTAS[i].name, { from: previousPage || currentPage });
+        return;
+      }
+    }
+
+    if (a.classList.contains('case-nav-item')) {
+      var title = a.querySelector('.case-nav-title');
+      if (title) trackEvent('Case study viewed', { name: title.textContent.trim() });
+    }
+  });
+})();
 
 window.addEventListener('popstate', function(e) {
   var id = (e.state && e.state.page) || pageForPath(window.location.pathname);
