@@ -1,12 +1,14 @@
 {
-  "version": 2,
-  "name": "fortiva-solutions",
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "quote-slickgorilla-hc1f9.html", "use": "@vercel/static" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/quote-slickgorilla-hc1f9.html",
+      "destination": "/quote/slickgorilla-hc1f9",
+      "permanent": false
+    }
   ],
-  "routes": [
-    { "src": "/quote/slickgorilla-hc1f9", "dest": "/quote-slickgorilla-hc1f9.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/quote/slickgorilla-hc1f9", "destination": "/quote-slickgorilla-hc1f9.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

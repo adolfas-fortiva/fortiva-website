@@ -679,13 +679,30 @@ function triggerAnimations(sectionId) {
   sessionStorage.setItem('anim_' + sectionId, '1');
 }
 
-function showPage(id) {
-  document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
+var PAGES = ['home','what','how','cases','contact','privacy','terms','disclaimer','cookies'];
+
+function pathForPage(id) { return id === 'home' ? '/' : '/' + id; }
+
+function pageForPath(path) {
+  var slug = String(path || '/').split('?')[0].split('#')[0].replace(/^\/+|\/+$/g, '').toLowerCase();
+  return PAGES.indexOf(slug) !== -1 ? slug : 'home';
+}
+
+function renderPage(id) {
   var target = document.getElementById('page-' + id);
-  if (target) {
-    target.classList.add('active');
+  if (!target) return false;
+  document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
+  target.classList.add('active');
+  triggerAnimations(id);
+  return true;
+}
+
+function showPage(id) {
+  if (renderPage(id)) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    triggerAnimations(id);
+    if (pathForPage(id) !== window.location.pathname) {
+      window.history.pushState({ page: id }, '', pathForPage(id));
+    }
   }
   return false;
 }
@@ -696,7 +713,19 @@ function showCase(index) {
   return false;
 }
 
-triggerAnimations('home');
+window.addEventListener('popstate', function(e) {
+  var id = (e.state && e.state.page) || pageForPath(window.location.pathname);
+  renderPage(id);
+  window.scrollTo({ top: 0 });
+});
+
+// Show the section matching the URL on first load, so deep links and refreshes work.
+(function () {
+  var id = pageForPath(window.location.pathname);
+  // Keep the query string: ?utm_source=... must survive for campaign attribution.
+  window.history.replaceState({ page: id }, '', pathForPage(id) + window.location.search + window.location.hash);
+  if (id === 'home') { triggerAnimations('home'); } else { renderPage(id); }
+})();
 </script>
 
 
@@ -710,13 +739,13 @@ triggerAnimations('home');
   </div>
   <div class="page-body">
     <div class="page-body-inner" style="max-width:48rem;">
-      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: September 2026</p>
 
       <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Who we are</h3>
       <p class="section-body" style="margin-bottom:2rem;">Fortiva Solutions is an operational consulting practice based in the United Kingdom. The data controller for any personal information collected through this website is Fortiva Solutions, contactable at adolfas@fortiva.solutions.</p>
 
       <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">What data we collect</h3>
-      <p class="section-body" style="margin-bottom:2rem;">This website does not operate its own contact form or collect data directly. If you book a meeting via Calendly, Calendly collects your name, email address, and any information you provide during booking under their own privacy policy. If you send an email, we receive your email address and the content of your message. We do not use analytics, advertising trackers, or third-party data collection beyond Calendly.</p>
+      <p class="section-body" style="margin-bottom:2rem;">This website does not operate its own contact form or collect data directly. If you book a meeting via Calendly, Calendly collects your name, email address, and any information you provide during booking under their own privacy policy. If you send an email, we receive your email address and the content of your message. This site uses Vercel Web Analytics, a cookieless analytics service that records aggregate, non-identifying page view data (page visited, referring website, country, device type and browser). It does not store identifiers on your device, does not track visitors across other websites, and does not collect personal data. Beyond Calendly and this analytics, we use no advertising trackers or third-party data collection.</p>
 
       <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">How we use your data</h3>
       <p class="section-body" style="margin-bottom:2rem;">Contact information is used solely to respond to enquiries and manage potential or existing client relationships. We do not share personal data with third parties, sell it, or use it for marketing without explicit consent.</p>
@@ -806,10 +835,13 @@ triggerAnimations('home');
   </div>
   <div class="page-body">
     <div class="page-body-inner" style="max-width:48rem;">
-      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: May 2026</p>
+      <p class="section-body" style="color:var(--text-light);font-size:0.8rem;margin-bottom:2rem;">Last updated: September 2026</p>
 
       <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">What this site uses</h3>
-      <p class="section-body" style="margin-bottom:2rem;">This website does not use advertising cookies, analytics cookies, or tracking pixels. No first-party cookies are set by Fortiva Solutions.</p>
+      <p class="section-body" style="margin-bottom:2rem;">This website does not use advertising cookies or tracking pixels, and does not set any first-party cookies. No cookie consent banner is required because nothing is stored on or read from your device.</p>
+
+      <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Privacy-friendly analytics</h3>
+      <p class="section-body" style="margin-bottom:2rem;">This site uses Vercel Web Analytics to count page views and see which pages are read. It is cookieless and stores no identifier on your device. It records only aggregate, non-identifying information: the page visited, the referring website, country, device type, browser and operating system. It does not track you across other websites, does not build a profile of you, and no data is sold or shared with advertisers.</p>
 
       <h3 style="font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.75rem;">Third-party cookies</h3>
       <p class="section-body" style="margin-bottom:2rem;">If you follow the link to book a meeting via Calendly, Calendly may set cookies on their platform in accordance with their own cookie policy. These cookies are set by Calendly, not by this website, and are subject to Calendly's terms.</p>
@@ -821,6 +853,12 @@ triggerAnimations('home');
     </div>
   </div>
 </section>
+
+<!-- Vercel Web Analytics - cookieless, no personal data, no consent banner required -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
